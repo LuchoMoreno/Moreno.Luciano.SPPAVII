@@ -54,11 +54,18 @@ const Login = () => {
       try {
         const res = await fetch(URLLogin, options);
         const nuevaRespuesta = await res.json();
-        console.log(username, password);
-        localStorage.setItem("token", nuevaRespuesta.token);
-        setToken(nuevaRespuesta.token);
-        alert("Usuario encontrado. Logueado con exito");
 
+        if (typeof nuevaRespuesta.token === 'undefined')
+        {
+          alert("No existe tal usuario.");
+        }
+        else
+        {
+          console.log(username, password);
+          localStorage.setItem("token", nuevaRespuesta.token);
+          setToken(nuevaRespuesta.token);
+          alert("Usuario encontrado. Logueado con exito. Se ha generado un token :)");
+        }
 
       } catch (error) {
 
