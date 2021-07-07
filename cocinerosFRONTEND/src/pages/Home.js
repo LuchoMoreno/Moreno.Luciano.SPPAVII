@@ -19,14 +19,12 @@ const ERRORINICIAL = {
   bgc: ""
 }
 
-const TokenHardcodeado = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZ1bGFuaXRvIiwiaWQiOiI2MGRkMDY3NmYyYTkzYjRhMDBhMGFiYjYiLCJpYXQiOjE2MjU2ODczMTJ9.aSrdkbYkWrgVV7DjTlVdClkaVmvTeNGRKApA_F_ImdQ";
-
+// solo para testear
+//const TokenHardcodeado = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZ1bGFuaXRvIiwiaWQiOiI2MGRkMDY3NmYyYTkzYjRhMDBhMGFiYjYiLCJpYXQiOjE2MjU2ODczMTJ9.aSrdkbYkWrgVV7DjTlVdClkaVmvTeNGRKApA_F_ImdQ";
 
 const Home = () => {
 
-
 const {token} = useContext(TokenContext);
-
 
 // para el spinner
 const [loading, setLoading] = useState(false);
@@ -49,7 +47,7 @@ useEffect(() => {
 
       const options = {
         method: "GET",
-        headers: { "Content-type": "application/json;charset=utf-8", "Authorization" : "Bearer " + TokenHardcodeado},
+        headers: { "Content-type": "application/json;charset=utf-8", "Authorization" : "Bearer " + token},
       }
 
       const res = await fetch(URL, options);
@@ -79,7 +77,7 @@ const altaCocinero = (nuevoCocinero) => {
 
   const options = {
     method: "POST",
-    headers: { "Content-type": "application/json;charset=utf-8", "Authorization" : "Bearer " + TokenHardcodeado},
+    headers: { "Content-type": "application/json;charset=utf-8", "Authorization" : "Bearer " + token},
     body: JSON.stringify(nuevoCocinero)
   }
 
@@ -122,7 +120,7 @@ const modificarCocinero = (cocinero) => {
 
   const options = {
     method: "PUT",
-    headers: { "Content-type": "application/json;charset=utf-8", "Authorization" : "Bearer " + TokenHardcodeado},
+    headers: { "Content-type": "application/json;charset=utf-8", "Authorization" : "Bearer " + token},
     body: JSON.stringify(cocinero)
   }
 
@@ -173,7 +171,7 @@ const bajaCocinero = (id) => {
 
   const options = {
     method: "DELETE",
-    headers: { "Content-type": "application/json;charset=utf-8", "Authorization" : "Bearer " + TokenHardcodeado},
+    headers: { "Content-type": "application/json;charset=utf-8", "Authorization" : "Bearer " + token},
   }
 
 

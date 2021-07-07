@@ -13,16 +13,15 @@ const TokenProvider = ({children}) => {
 
     useEffect(() => {
 
-        //setToken(JSON.parse(localStorage.getItem("token")));
-        setToken(localStorage.getItem("token"));
-        console.log(token);
-
+            setToken(localStorage.getItem("token"));
+            console.log(token);
+        
     }, [token])
 
 
     return (
         // le envio el token obtenido previamente.
-        <TokenContext.Provider value={{token}}>
+        <TokenContext.Provider value={{token, setToken}}>
             {children}
         </TokenContext.Provider>
     )

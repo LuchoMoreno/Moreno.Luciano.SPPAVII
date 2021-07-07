@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
+// Contextos.
+import { TokenContext } from '../context/TokenContext';
 
 // formulario inicial.
 const frmInicialLogin = {
@@ -6,10 +9,13 @@ const frmInicialLogin = {
   password: '',
 };
 
+
 const URLLogin = "http://localhost:3500/api/login";
 
 const Login = () => {
 
+
+  const {token, setToken} = useContext(TokenContext);
 
   const [form, setForm] = useState(frmInicialLogin);
 
@@ -50,6 +56,7 @@ const Login = () => {
         const nuevaRespuesta = await res.json();
         console.log(username, password);
         localStorage.setItem("token", nuevaRespuesta.token);
+        setToken(nuevaRespuesta.token);
         alert("Usuario encontrado. Logueado con exito");
 
 
