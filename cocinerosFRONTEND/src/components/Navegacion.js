@@ -1,21 +1,18 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
 const Navegacion = () => {
 
     return (
-        <nav>
-            <ol>
-                <li>
-                    <Link to="/login"> Login </Link>
-                    <Link to="/registro"> Registro </Link>
-                    <Link to="/"> Home </Link>
-                </li>
-            </ol>
-        </nav>
+        <div class="nav">
+               
+                <a> <Link to="/login"> LOGIN </Link> </a>
+                <a> <Link to="/registro"> REGISTRO </Link> </a>
+                <a> <Link to="/"> HOME </Link> </a>
+        </div>
     )
 }
- 
+
 export default Navegacion;
