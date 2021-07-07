@@ -59,21 +59,31 @@ const Registro = () => {
 
     return (  
 
-        <div className="contenedor-form">
+      <div className="contenedor-form">
 
-            <form onSubmit={handlerSubmit}>
-
-                <div className="divColumna">
-                    <input type="text" name="username" placeholder="Ingrese su username" onChange={handlerChange} value={username} />
-                    <input type="password" name="password" placeholder="Ingrese su password" onChange={handlerChange} value={password} />
-                </div>
-
-                <input type="submit" value={"Registrarse"} onClick={handlerSubmit} />
+      <form onSubmit={handlerSubmit}>
 
 
-            </form>
+        <div className="wrapper">
+          <div className="row">
+            <h1> REGISTRO </h1>
+            <div className="form-control">
+              <input name="username" placeholder="Ingrese su nombre" onChange={handlerChange} value={username} />
+              <span className="toggle">
+                <i className="fas fa-user"></i>
+              </span>
+            </div>
+            <div className="form-control">
+              <input name="password" type="password" placeholder="Ingrese su contraseña" onChange={handlerChange} value={password} />
 
+            </div>
+            <input type="submit" value={"Registrarse"} onClick={handlerSubmit} />         
+            </div>
         </div>
+
+      </form>
+
+    </div>
 
     );
 }
