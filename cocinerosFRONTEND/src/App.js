@@ -6,9 +6,9 @@ import Login from './pages/Login';
 import TokenProvider from './context/TokenContext';
 import Registro from './pages/Registro';
 
+import Navegacion from './components/Navegacion';
+
 function App() {
-
-
 
 
   return (
@@ -18,6 +18,7 @@ function App() {
     <div>
 
           <Router>
+          <Navegacion/>
               <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/login" component={Login} />
